@@ -6,6 +6,7 @@ import router from "./router";
 
 // bootstrap bundle
 import bootstrap from "bootstrap/dist/js/bootstrap.bundle";
+import "./assets/tailwind.css";
 
 import { createMetaManager, defaultConfig } from "vue-meta";
 const metaManager = createMetaManager(false, {

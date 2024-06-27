@@ -1,10 +1,10 @@
 const experience = [
   {
     id: 1,
-    date: "Jan 2022 - Present",
-    position: "Backend Developer",
-    company: "KMS Lighthouse",
-    url: "https://kmslh.com/",
+    date: "nov 2023 - may 2024",
+    position: "Frontend Developer",
+    company: "Armino Technologies pvt ltd",
+    url: "https://armino.in/",
     description: [
       {
         id: 1,
@@ -25,10 +25,10 @@ const experience = [
   },
   {
     id: 2,
-    date: "Feb 2020 - Apr 2020",
-    position: "Backend Developer Intern",
-    company: "ISPsystem",
-    url: "https://www.ispsystem.com/",
+    date: "dec 2021 - oct 2023",
+    position: "Vue.js Developer",
+    company: "Acemero Technologies pvt ltd",
+    url: "https://acemero.com/",
     description: [
       {
         id: 1,
