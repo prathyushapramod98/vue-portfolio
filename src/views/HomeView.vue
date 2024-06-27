@@ -1,14 +1,12 @@
 <template>
   <!-- Menu -->
-  <MenuVue :links="links">> # ~ / nikita<span class="prim">r</span></MenuVue>
+  <MenuVue :links="links">> # ~ / prathyusha</MenuVue>
   <HeroSection id="hero" pic="header.png">
     <template v-slot:welcome>Welcome!</template>
-    My name is <b>Nikita Rusetskii</b> and I'm a
-    <hi-word>software engineer</hi-word>. My passion is building
+    My name is <b>Prathyusha Pramod</b> and I'm a
+    <hi-word>Frontend Developer</hi-word>. My passion is building
     <hi-word>web applications</hi-word> and
-    <hi-word>designing websites</hi-word> using modern frameworks. Also I'm
-    doing research in <hi-word>machine learning</hi-word> applied to renewable
-    energy
+    <hi-word>designing websites</hi-word> using modern frameworks Vue.js.
     <template v-slot:buttons>
       <simple-button
         class="btn-primary text-white"
