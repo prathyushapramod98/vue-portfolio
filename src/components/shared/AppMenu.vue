@@ -51,6 +51,6 @@ export default {
   text-decoration: none;
   font-weight: bold;
   font-display: auto;
-  font-family: monospace, monospace;
+  font-family: "Bungee Spice", sans-serif;
 }
 </style>

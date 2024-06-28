@@ -4,13 +4,14 @@
     <button @click="toggleDarkMode" class="cursor-pointer w-10 h-10">
       <i :class="`fa fa-${isDarkMode ? 'sun' : 'moon'}`"></i>
     </button>
-    <img src="me.png" alt="Avatar"
-  /></MenuVue>
+    <span id="hero"> Prathyusha</span></MenuVue
+  >
   <HeroSection id="hero" pic="header.png">
-    <template v-slot:welcome>Hi, it's me <span>PRATHYUSHA</span></template>
-    <hi-word>Frontend Developer</hi-word>. My passion is building
-    <hi-word>web applications</hi-word> and
-    <hi-word>designing websites</hi-word> using modern framework Vue.js.
+    <template v-slot:welcome
+      >Hi, it's me <span class="name">PRATHYUSHA</span><br />
+      <h2>Frontend Developer</h2>
+    </template>
+
     <template v-slot:buttons>
       <simple-button
         class="btn-primary text-white"
@@ -60,7 +61,6 @@ import ExperienceTable from "@/components/experience/ExperienceTable.vue";
 import skills from "@/data/skills";
 import experience from "@/data/experience";
 import SimpleButton from "@/components/reusable/SimpleButton.vue";
-import HiWord from "@/components/reusable/HighlightIt.vue";
 
 export default {
   name: "HomeView",
@@ -124,12 +124,14 @@ export default {
     SkillsGrid,
     ExperienceTable,
     SimpleButton,
-    HiWord,
   },
 };
 </script>
 <style lang="scss" scoped>
 .prim {
   color: $primary;
+}
+.name {
+  font-family: "Archivo Black", sans-serif;
 }
 </style>

@@ -54,8 +54,6 @@ export default {
         title: "Prathyusha - Frondend Developer",
         description: "Just a guy with passion for coding",
         type: "website",
-        url: "https://rusetskii.dev/",
-        image: "https://rusetskii.dev" + require(`@/assets/images/preview.jpg`),
         site_name: "Prathyusha - Frondend Developer",
       },
       meta: [
