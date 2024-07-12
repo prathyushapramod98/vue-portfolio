@@ -9,28 +9,15 @@
         data-aos-anchor-placement="top-bottom"
       />
       <h4
-        class="mb-3"
-        data-aos="fade-up"
-        :data-aos-delay="delay + 100"
-        data-aos-anchor-placement="top-bottom"
-      >
-        {{ skill.title }}
-      </h4>
-      <div
         class="tags mb-3 has-text-weight-semibold"
         data-aos="fade-up"
         :data-aos-delay="delay + 200"
         data-aos-anchor-placement="top-bottom"
       >
-        <span
-          v-for="language in skill.languages"
-          :key="language.id"
-          class="tag"
-          :class="language.css"
-        >
-          {{ language.title }}
+        <span class="tag" :class="skill.css">
+          {{ skill.title }}
         </span>
-      </div>
+      </h4>
       <div>
         {{ skill.description }}
       </div>
@@ -89,9 +76,14 @@ span:hover {
   background-color: #4fc08d;
 }
 
-.bulma:hover {
+.nuxtjs:hover {
   color: #fff;
   background-color: #00d1b2;
+}
+
+.javascript:hover {
+  color: #000;
+  background-color: #f7df1e;
 }
 
 .bootstrap:hover {
@@ -99,58 +91,28 @@ span:hover {
   background-color: #7952b3;
 }
 
-.typescript:hover {
-  color: #fff;
-  background-color: #3178c6;
-}
-
-.java:hover {
+.css:hover {
   color: #fff;
   background-color: #007396;
 }
 
-.groovy:hover {
+.html:hover {
+  color: #fff;
+  background-color: #d14020;
+}
+
+.vuetify:hover {
   color: #fff;
   background-color: #4298b8;
 }
 
-.solr:hover {
+.tailwind:hover {
   color: #fff;
-  background-color: #d9411e;
+  background-color: #0d98ba;
 }
 
-.spring:hover {
+.supabase:hover {
   color: #fff;
   background-color: #6db33f;
-}
-
-.kotlin:hover {
-  color: #fff;
-  background-color: #0095d5;
-}
-
-.docker:hover {
-  color: #fff;
-  background-color: #2496ed;
-}
-
-.tensorflow:hover {
-  color: #fff;
-  background-color: #ff6f00;
-}
-
-.pytorch:hover {
-  color: #fff;
-  background-color: #ee4c2c;
-}
-
-.opencv:hover {
-  color: #fff;
-  background-color: #5c3ee8;
-}
-
-.js:hover {
-  color: #000;
-  background-color: #f7df1e;
 }
 </style>
