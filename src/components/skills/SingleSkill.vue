@@ -103,7 +103,7 @@ span:hover {
 
 .vuetify:hover {
   color: #fff;
-  background-color: #4298b8;
+  background-color: #18c5ef;
 }
 
 .tailwind:hover {

@@ -34,7 +34,7 @@ li {
   margin-bottom: 10px;
 }
 a {
-  color: $primary;
+  color: #be6400;
   text-decoration: none;
 
   &:hover {
@@ -118,7 +118,7 @@ a {
   width: 15px;
 
   &:before {
-    background: $primary;
+    background: #be6400;
     border: 3px solid transparent;
     border-radius: 100%;
     content: "";
@@ -147,7 +147,7 @@ a {
   }
   &:not(.period):hover .timeline-marker:before {
     background: transparent;
-    border: 3px solid $primary;
+    border: 3px solid #be6400;
   }
 } /*----- TIMELINE CONTENT -----*/
 .timeline-content {

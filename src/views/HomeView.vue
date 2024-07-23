@@ -8,9 +8,9 @@
       ></simple-button>
       <span id="hero"> Prathyusha</span>
     </MenuVue>
-    <HeroSection id="hero" pic="header.png">
+    <HeroSection class="hero" pic="3d.png">
       <template v-slot:welcome>
-        Hi, it's me <span class="name">PRATHYUSHA</span><br />
+        Hi, It's Me <span class="name">PRATHYUSHA</span><br />
         <h2 class="designation">Frontend Developer</h2>
       </template>
       <template v-slot:buttons>
@@ -26,7 +26,10 @@
           icon="fa fa-file-lines"
           >Contact me</simple-button
         >
-        <simple-button class="btn-primary text-white" icon="fa fa-file-pdf">
+        <simple-button
+          class="btn-primary text-white"
+          icon="fa fa-arrow-down-circle"
+        >
           <a
             download="Prathyusha-Resume.pdf"
             href="/files/Prathyusha-Resume.pdf"

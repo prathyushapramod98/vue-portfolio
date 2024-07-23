@@ -41,7 +41,7 @@ export default {
 }
 
 .nav-link.active {
-  border-bottom: 2px solid $primary;
+  border-bottom: 2px solid#be6400;
 }
 
 .logo {
