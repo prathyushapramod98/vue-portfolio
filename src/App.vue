@@ -12,33 +12,54 @@
     <transition name="fade" mode="out-in">
       <router-view />
     </transition>
-
-    <!-- Scroll to top -->
-    <back-to-top
-      visibleoffset="500"
-      right="30px"
-      bottom="20px"
-      class="shadow-lg"
-    >
-      <i data-feather="chevron-up"></i>
-    </back-to-top>
+    <!-- Menu -->
+    <MenuVue :links="links" :class="[isDarkMode ? 'text-black' : 'text-white']">
+      <template v-slot:icon>
+        <font-awesome-icon
+          @click="toggleDarkMode"
+          :icon="['fas', isDarkMode ? 'moon' : 'sun']"
+          class="toggle-dark-mode-icon"
+        />
+      </template>
+      <template v-slot:name>
+        <span id="hero" class="p-2"> Prathyusha</span>
+      </template>
+    </MenuVue>
   </div>
 </template>
 <script>
-// aos
-// import AOS from "aos";
-// import "aos/dist/aos.css";
 import { useMeta } from "vue-meta";
+import MenuVue from "@/components/shared/AppMenu.vue";
 
 export default {
   data: () => {
     return {
+      isDarkMode: false,
+      delay: 100,
       webTitle: "Prathyusha - Frondend Developer",
+      links: [
+        {
+          name: "Home",
+          url: "#hero",
+        },
+        {
+          name: "About",
+          url: "#about",
+        },
+        {
+          name: "Skills",
+          url: "#skills",
+        },
+        {
+          name: "Experience",
+          url: "#edu-exp",
+        },
+      ],
     };
   },
   setup() {
     useMeta({
-      title: "Prathyusha - Frondend Developer",
+      title: "Prathyusha - Frontend Developer",
       description: "Just a guy with passion for coding",
       htmlAttrs: {
         lang: "en",
@@ -75,9 +96,23 @@ export default {
       ],
     });
   },
-  // mounted() {
-  //   AOS.init();
-  // },
+  mounted() {
+    const savedDarkMode = localStorage.getItem("darkMode");
+    if (savedDarkMode) {
+      this.isDarkMode = savedDarkMode === "true";
+      document.documentElement.classList.toggle("dark", this.isDarkMode);
+    }
+  },
+  methods: {
+    toggleDarkMode() {
+      this.isDarkMode = !this.isDarkMode;
+      localStorage.setItem("darkMode", this.isDarkMode);
+      document.documentElement.classList.toggle("dark", this.isDarkMode);
+    },
+  },
+  components: {
+    MenuVue,
+  },
 };
 </script>
 <style lang="scss">
@@ -130,5 +165,15 @@ a,
 a:active,
 a:visited {
   text-decoration: none !important;
+}
+
+body {
+  background-color: white;
+  color: black;
+}
+
+.dark body {
+  background-color: #1a202c;
+  color: white;
 }
 </style>

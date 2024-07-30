@@ -1,13 +1,5 @@
 <template>
   <div>
-    <!-- Menu -->
-    <MenuVue :links="links">
-      <simple-button
-        @click="toggleDarkMode"
-        :icon="`fa-regular fa-${isDarkMode ? 'sun' : 'moon'}`"
-      ></simple-button>
-      <span id="hero"> Prathyusha</span>
-    </MenuVue>
     <HeroSection class="hero" pic="3d.png">
       <template v-slot:welcome>
         Hi, It's Me <span class="name">PRATHYUSHA</span><br />
@@ -23,12 +15,12 @@
         <simple-button
           class="btn-outline-secondary"
           url="mailto:prathyushapachu985@gmail.com"
-          icon="fa fa-file-lines"
+          icon="fab fa-file-lines"
           >Contact me</simple-button
         >
         <simple-button
           class="btn-primary text-white"
-          icon="fa fa-arrow-down-circle"
+          icon="fab fa-arrow-down-circle"
         >
           <a
             download="Prathyusha-Resume.pdf"
@@ -54,7 +46,6 @@
 </template>
 
 <script>
-import MenuVue from "@/components/shared/AppMenu.vue";
 import FooterVue from "@/components/shared/AppFooter.vue";
 import HeroSection from "@/components/hero/HeroSection.vue";
 import AboutMe from "@/components/about/AboutMe.vue";
@@ -70,26 +61,6 @@ export default {
   name: "HomeView",
   data: () => {
     return {
-      isDarkMode: false,
-      delay: 100,
-      links: [
-        {
-          name: "Home",
-          url: "#hero",
-        },
-        {
-          name: "About",
-          url: "#about",
-        },
-        {
-          name: "Skills",
-          url: "#skills",
-        },
-        {
-          name: "Experience",
-          url: "#edu-exp",
-        },
-      ],
       skills,
       experience,
       socials: [
@@ -107,22 +78,7 @@ export default {
       copyright: "prathyusha",
     };
   },
-  mounted() {
-    const savedDarkMode = localStorage.getItem("darkMode");
-    if (savedDarkMode) {
-      this.isDarkMode = savedDarkMode === "true";
-      document.documentElement.classList.toggle("dark", this.isDarkMode);
-    }
-  },
-  methods: {
-    toggleDarkMode() {
-      this.isDarkMode = !this.isDarkMode;
-      localStorage.setItem("darkMode", this.isDarkMode);
-      document.documentElement.classList.toggle("dark", this.isDarkMode);
-    },
-  },
   components: {
-    MenuVue,
     FooterVue,
     HeroSection,
     AboutMe,

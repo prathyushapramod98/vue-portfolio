@@ -18,8 +18,9 @@ const metaManager = createMetaManager(false, {
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
-import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
-library.add(faLinkedinIn, faGithub, faFileLines);
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+library.add(fab, fas, faFileLines);
 
 createApp(App)
   .use(bootstrap)
