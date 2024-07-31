@@ -13,7 +13,10 @@
       <router-view />
     </transition>
     <!-- Menu -->
-    <MenuVue :links="links" :class="[isDarkMode ? 'text-black' : 'text-white']">
+    <MenuVue :links="links" :isDarkMode="isDarkMode">
+      <template v-slot:name>
+        <span id="hero" class="p-2"> Prathyusha</span>
+      </template>
       <template v-slot:icon>
         <font-awesome-icon
           @click="toggleDarkMode"
@@ -21,12 +24,10 @@
           class="toggle-dark-mode-icon"
         />
       </template>
-      <template v-slot:name>
-        <span id="hero" class="p-2"> Prathyusha</span>
-      </template>
     </MenuVue>
   </div>
 </template>
+
 <script>
 import { useMeta } from "vue-meta";
 import MenuVue from "@/components/shared/AppMenu.vue";
@@ -36,7 +37,7 @@ export default {
     return {
       isDarkMode: false,
       delay: 100,
-      webTitle: "Prathyusha - Frondend Developer",
+      webTitle: "Prathyusha - Frontend Developer",
       links: [
         {
           name: "Home",
@@ -66,16 +67,16 @@ export default {
         amp: true,
       },
       twitter: {
-        title: "Prathyusha - Frondend Developer",
+        title: "Prathyusha - Frontend Developer",
         description: "Just a guy with passion for coding",
         card: "summary_large_image",
         image: "https://rusetskii.dev" + require(`@/assets/images/preview.jpg`),
       },
       og: {
-        title: "Prathyusha - Frondend Developer",
+        title: "Prathyusha - Frontend Developer",
         description: "Just a guy with passion for coding",
         type: "website",
-        site_name: "Prathyusha - Frondend Developer",
+        site_name: "Prathyusha - Frontend Developer",
       },
       meta: [
         {
@@ -115,6 +116,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 html {
   scroll-behavior: smooth;
@@ -175,5 +177,22 @@ body {
 .dark body {
   background-color: #1a202c;
   color: white;
+}
+
+.text-black {
+  color: black !important;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.toggle-dark-mode-icon {
+  cursor: pointer;
+  padding-right: 10px;
+}
+
+.hero-name {
+  padding-left: 10px;
 }
 </style>

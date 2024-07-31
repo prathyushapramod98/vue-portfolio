@@ -1,8 +1,15 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="main-nav">
+  <nav
+    :class="[
+      'navbar',
+      'navbar-expand-lg',
+      'fixed-top',
+      isDarkMode ? 'navbar-dark bg-orange-500' : 'navbar-light bg-white',
+    ]"
+    id="main-nav"
+  >
     <div class="container">
       <a class="logo navbar-brand d-flex align-items-center" href="#">
-        <slot name="icon"></slot>
         <slot name="name"></slot>
       </a>
       <button
@@ -22,6 +29,9 @@
           <li v-for="link in links" :key="link.name" class="nav-item px-lg-2">
             <a class="nav-link" :href="link.url">{{ link.name }}</a>
           </li>
+          <li class="nav-item px-lg-2 d-flex align-items-center">
+            <slot name="icon"></slot>
+          </li>
         </ul>
       </div>
     </div>
@@ -29,7 +39,10 @@
 </template>
 <script>
 export default {
-  props: ["links"],
+  props: {
+    links: Array,
+    isDarkMode: Boolean,
+  },
   name: "AppMenu",
 };
 </script>
