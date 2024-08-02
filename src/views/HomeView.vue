@@ -2,8 +2,10 @@
   <div>
     <HeroSection class="hero" pic="3d.png">
       <template v-slot:welcome>
-        Hi, It's Me <span class="name">PRATHYUSHA</span><br />
-        <h2 class="designation">Frontend Developer</h2>
+        <div ref="welcomeText">
+          Hi, It's Me <span class="name">PRATHYUSHA</span><br />
+          <h2 class="designation">Frontend Developer</h2>
+        </div>
       </template>
       <template v-slot:buttons>
         <simple-button
@@ -15,22 +17,17 @@
         <simple-button
           class="btn-outline-secondary"
           url="mailto:prathyushapachu985@gmail.com"
-          icon="fab fa-file-lines"
+          icon="fas envelope"
           >Contact me</simple-button
         >
-        <simple-button
-          class="btn-primary text-white"
-          icon="fab fa-arrow-down-circle"
-        >
+        <simple-button class="btn-primary text-white" icon="fas download">
           <a
             download="Prathyusha-Resume.pdf"
             href="/files/Prathyusha-Resume.pdf"
             class="flex justify-center items-center w-36 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg py-2.5 sm:py-3 text-white duration-500"
             aria-label="Download Resume"
           >
-            <i
-              class="fa fa-arrow-down-circle ml-0 sm:ml-1 mr-2 sm:mr-3 w-5 sm:w-6 duration-100"
-            ></i>
+            <!-- <font-awesome-icon :icon="['fas', 'download']" /> -->
             <span class="text-sm sm:text-lg font-general-medium duration-100"
               >Download CV</span
             >
@@ -46,6 +43,7 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
 import FooterVue from "@/components/shared/AppFooter.vue";
 import HeroSection from "@/components/hero/HeroSection.vue";
 import AboutMe from "@/components/about/AboutMe.vue";
@@ -85,6 +83,14 @@ export default {
     SkillsGrid,
     ExperienceTable,
     SimpleButton,
+  },
+  mounted() {
+    gsap.from(this.$refs.welcomeText, {
+      duration: 2,
+      y: 30,
+      opacity: 0,
+      ease: "power3.out",
+    });
   },
 };
 </script>

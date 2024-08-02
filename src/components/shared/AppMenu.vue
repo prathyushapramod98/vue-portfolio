@@ -4,7 +4,7 @@
       'navbar',
       'navbar-expand-lg',
       'fixed-top',
-      isDarkMode ? 'navbar-dark bg-orange-500' : 'navbar-light bg-white',
+      isDarkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-white',
     ]"
     id="main-nav"
   >

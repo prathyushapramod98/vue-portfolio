@@ -15,7 +15,7 @@
     <!-- Menu -->
     <MenuVue :links="links" :isDarkMode="isDarkMode">
       <template v-slot:name>
-        <span id="hero" class="p-2"> Prathyusha</span>
+        <span id="hero"> Prathyusha</span>
       </template>
       <template v-slot:icon>
         <font-awesome-icon
@@ -193,6 +193,6 @@ body {
 }
 
 .hero-name {
-  padding-left: 10px;
+  padding-left: 8px;
 }
 </style>
