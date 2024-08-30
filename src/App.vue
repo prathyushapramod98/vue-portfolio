@@ -1,6 +1,5 @@
 <template>
-  <metainfo> </metainfo>
-
+  <metainfo></metainfo>
   <div
     class="scrollspy-example"
     data-bs-offset="0"
@@ -15,13 +14,14 @@
     <!-- Menu -->
     <MenuVue :links="links" :isDarkMode="isDarkMode">
       <template v-slot:name>
-        <span id="hero"> Prathyusha</span>
+        <span id="hero" ref="heroText"> Prathyusha</span>
       </template>
       <template v-slot:icon>
         <font-awesome-icon
           @click="toggleDarkMode"
-          :icon="['fas', isDarkMode ? 'moon' : 'sun']"
+          :icon="['fas', isDarkMode ? 'sun' : 'moon']"
           class="toggle-dark-mode-icon"
+          ref="darkModeIcon"
         />
       </template>
     </MenuVue>
@@ -30,6 +30,7 @@
 
 <script>
 import { useMeta } from "vue-meta";
+import { gsap } from "gsap";
 import MenuVue from "@/components/shared/AppMenu.vue";
 
 export default {
@@ -70,7 +71,6 @@ export default {
         title: "Prathyusha - Frontend Developer",
         description: "Just a guy with passion for coding",
         card: "summary_large_image",
-        image: "https://rusetskii.dev" + require(`@/assets/images/preview.jpg`),
       },
       og: {
         title: "Prathyusha - Frontend Developer",
@@ -103,12 +103,43 @@ export default {
       this.isDarkMode = savedDarkMode === "true";
       document.documentElement.classList.toggle("dark", this.isDarkMode);
     }
+
+    // GSAP animations
+    this.animateElements();
   },
   methods: {
     toggleDarkMode() {
       this.isDarkMode = !this.isDarkMode;
       localStorage.setItem("darkMode", this.isDarkMode);
       document.documentElement.classList.toggle("dark", this.isDarkMode);
+    },
+    animateElements() {
+      // Hero text animation
+      gsap.from(this.$refs.heroText, {
+        duration: 2,
+        x: -100,
+        opacity: 0,
+        ease: "power3.out",
+      });
+
+      // Dark mode icon animation
+      gsap.from(this.$refs.darkModeIcon, {
+        duration: 1.5,
+        rotate: 360,
+        opacity: 0,
+        ease: "power3.out",
+      });
+
+      // Menu links animation
+      this.links.forEach((link, index) => {
+        gsap.from(`#${link.url.substring(1)}`, {
+          duration: 1.5,
+          y: 50,
+          opacity: 0,
+          ease: "power3.out",
+          delay: index * 0.3,
+        });
+      });
     },
   },
   components: {

@@ -15,8 +15,8 @@
 - [ ] Add blog;
 - [ ] Enable AOS animations.
 
-## ©️ Reference
-- Project filters & routing taken from [Nangialai Stoman's tailwindcss portfolio template](https://github.com/realstoman/vuejs-tailwindcss-portfolio)
+<!-- ## ©️ Reference
+- Project filters & routing taken from [Nangialai Stoman's tailwindcss portfolio template](https://github.com/realstoman/vuejs-tailwindcss-portfolio) -->
 
 ## 💻 How to build the project?
 Install dependencies
