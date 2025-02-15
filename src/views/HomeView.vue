@@ -9,29 +9,37 @@
       </template>
       <template v-slot:buttons>
         <simple-button
-          class="btn-primary text-white"
+          class="btn-outline-secondary"
           url="https://linkedin.com/in/prathyusha-pramod"
           icon="fab fa-linkedin-in"
-        >
-          Hire me!
-        </simple-button>
+        />
+
         <simple-button
           class="btn-outline-secondary"
           url="mailto:prathyushapachu985@gmail.com"
           icon="fas envelope"
+        />
+
+        <simple-button
+          class="btn-outline-secondary"
+          icon="fab fa-github"
+          url="https://github.com/prathyushapramod98"
+        />
+
+        <simple-button
+          class="btn-outline-secondary"
+          icon="fas download"
+          title="Download CV"
         >
-          Contact me
-        </simple-button>
-        <simple-button class="btn-primary text-white" icon="fas download">
           <a
             download="Prathyusha.pdf"
             href="/files/Prathyusha.pdf"
             class="flex justify-center items-center w-36 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg py-2.5 sm:py-3 text-white duration-500"
             aria-label="Download Resume"
           >
-            <span class="text-sm sm:text-lg font-general-medium duration-100"
+            <!-- <span class="text-sm sm:text-lg font-general-medium duration-100"
               >Download CV</span
-            >
+            > -->
           </a>
         </simple-button>
       </template>
